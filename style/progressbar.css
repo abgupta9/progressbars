@@ -17,3 +17,10 @@ and open the template in the editor.
 .right-margin-5px{
     margin-right: 5px;
 }
+.progress span{
+    right: 46%;
+    position: absolute;
+}
+.color-white{
+    color: white;
+}

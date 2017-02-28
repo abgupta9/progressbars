@@ -17,20 +17,20 @@ and open the template in the editor.
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <!--<script src="bundle.js"></script>-->
 
         <div class="container-fluid" ng-app="progressBars" ng-controller="progressBarsCtrl" >
             <div class="row">
                 <div class="col-xs-12">
-                    <h3>Progress Bars</h3>
+                    <h3>Assignment Progress Bars</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <div class="progress" ng-repeat="bar in noOfBars">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="bar" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( bar + '%' ) }">
-                            {{bar}}%
+                    <div class="progress text-center" ng-repeat="bar in noOfBars track by $index">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="bar" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( bar + '%' ) }"  ng-class="{'progress-bar-danger':bar>100}">
+                            
                         </div>
+                        <span ng-class="{'color-white':bar>50}">{{bar}}%</span>
                     </div>
                 </div>
             </div>
@@ -43,18 +43,12 @@ and open the template in the editor.
                                 Progress {{selectedBar + 1}}<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li ng-repeat="bar in noOfBars"><a ng-click="selectBar($index)">Progress {{$index+1}}</a></li>
+                                <li ng-repeat="bar in noOfBars track by $index"><a ng-click="selectBar($index)">Progress {{$index+1}}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-8 ">
-                        <!--<div class="col-xs-2">-->
-                        <button class="btn btn-default right-margin-5px" ng-repeat="button in noOfButtons" ng-click="updateProgressBar(button)">{{button}}</button>
-<!--                        <button class="btn btn-default">+20</button>
-                        <button class="btn btn-default">+20</button>
-                        <button class="btn btn-default">+20</button> <button class="btn btn-default">+20</button>-->
-
-                        <!--</div>-->
+                        <button class="btn btn-default right-margin-5px" ng-repeat="button in noOfButtons track by $index" ng-click="updateProgressBar(button)">{{button}}</button>
                     </div>
                 </div>
 
