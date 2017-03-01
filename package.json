@@ -20,7 +20,16 @@
   "homepage": "https://github.com/abgupta9/progressbars#readme",
   "devDependencies": {
     "angular": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
-    "jasmine": "^2.5.3"
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0"
+  },
+  "dependencies": {
+    "jasmine-object-matchers": "^0.1.0"
   }
 }
